@@ -48,7 +48,7 @@ public class Task implements Runnable {
         long executionDuration = endTime - startTime;
 
         // Log task completion time and execution duration
-        logger.log(Level.INFO, "\n \nTask {0} completed execution at {1}, Time taken: {2} milliseconds\n",
+        logger.log(Level.INFO, "Task {0} completed execution at {1}, Time taken: {2} milliseconds\n\n",
                 new Object[] { taskId, new Date(endTime), executionDuration });
     }
 }
