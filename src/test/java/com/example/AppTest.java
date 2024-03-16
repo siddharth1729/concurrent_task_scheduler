@@ -1,4 +1,4 @@
-package com.siddharthsabron;
+package com.example;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
