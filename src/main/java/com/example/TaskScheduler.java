@@ -2,12 +2,16 @@ package com.example;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * TaskScheduler class manages the scheduling and execution of tasks using a
  * thread pool.
  */
 public class TaskScheduler {
+    private static final Logger logger = Logger.getLogger(TaskScheduler.class.getName());
+
     private final ExecutorService executor; // ExecutorService for task execution
 
     /**
@@ -25,7 +29,14 @@ public class TaskScheduler {
      * @param task The task to be scheduled for execution.
      */
     public void scheduleTask(Task task) {
-        executor.execute(task); // Submit task to the executor service
+        executor.execute(() -> {
+            try {
+                task.run(); // Execute the task
+            } catch (Exception e) {
+                // Log any exceptions that occur during task execution
+                logger.log(Level.SEVERE, "Error executing task: {0}", e.getMessage());
+            }
+        });
     }
 
     /**
