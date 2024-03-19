@@ -20,15 +20,13 @@ This project implements a Concurrent Task Scheduler in Java, which optimizes the
 
 1. Clone the repository:
 
-   ```bash
+```bash
    git clone https://github.com/siddharth1729/concurrent_task_scheduler.git
-
 ```
 
 Navigate to the project directory:
 
 ```bash
-
 cd concurrent_task_scheduler
 ```
 
